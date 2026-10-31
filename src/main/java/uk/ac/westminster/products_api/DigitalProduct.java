@@ -9,16 +9,12 @@ public class DigitalProduct extends Product implements Discountable {
     public DigitalProduct() {
     }
     public DigitalProduct(Long id, String name, double price, String downloadUrl, double fileSizeMB) {
-    super(id, name, price);
+        super(id, name, price);
         this.downloadUrl = downloadUrl;
         this.fileSizeMB = fileSizeMB;
+        this.discountedPrice = price;
     }
-    public String getDownloadUrl() {
-        return downloadUrl;
-    }
-    public double getFileSizeMB(){
-        return fileSizeMB;
-    }
+
     @Override
     public String getSummary() {
         return "Digital: " + getName()
@@ -32,4 +28,12 @@ public class DigitalProduct extends Product implements Discountable {
     public double getDiscountedPrice() {
         return discountedPrice;
     }
+
+    public String getDownloadUrl() {
+        return downloadUrl;
+    }
+    public double getFileSizeMB(){
+        return fileSizeMB;
+    }
+
 }
